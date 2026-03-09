@@ -2,6 +2,31 @@ import streamlit as st
 
 st.set_page_config(page_title="Troubleshooting", page_icon="🔧")
 
+st.markdown("""
+<style>
+div[data-testid="column"]:nth-of-type(1) button {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    height: 55px;
+    border-radius: 8px;
+}
+div[data-testid="column"]:nth-of-type(1) button:hover {
+    background-color: #218838;
+}
+div[data-testid="column"]:nth-of-type(2) button {
+    background-color: #dc3545;
+    color: white;
+    font-size: 18px;
+    height: 55px;
+    border-radius: 8px;
+}
+div[data-testid="column"]:nth-of-type(2) button:hover {
+    background-color: #c82333;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("Troubleshooting Tool")
 
 # 初始化状态
@@ -199,6 +224,7 @@ elif st.session_state.step == 12:
         st.session_state.code = 9000100
 
         st.rerun()
+
 
 
 
