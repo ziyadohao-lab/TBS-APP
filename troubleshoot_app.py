@@ -1,8 +1,8 @@
 import streamlit as st
 
-st.set_page_config(page_title="Cooktop Troubleshooting", page_icon="🔧")
+st.set_page_config(page_title="Troubleshooting", page_icon="🔧")
 
-st.title("Cooktop Troubleshooting Tool")
+st.title("Troubleshooting Tool")
 
 # 初始化状态
 if "step" not in st.session_state:
@@ -197,4 +197,5 @@ elif st.session_state.step == 12:
 
     if col2.button("No"):
         st.session_state.code = 9000100
+
         st.rerun()
