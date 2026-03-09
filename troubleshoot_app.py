@@ -2,38 +2,6 @@ import streamlit as st
 
 st.set_page_config(page_title="Troubleshooting", page_icon="🔧")
 
-st.markdown("""
-<style>
-
-/* YES 按钮 */
-button[data-testid="baseButton-secondary"][key*="yes"] {
-    background-color: #28a745;
-    color: white;
-    border-radius: 8px;
-    font-size: 18px;
-    height: 50px;
-}
-
-button[data-testid="baseButton-secondary"][key*="yes"]:hover {
-    background-color: #218838;
-}
-
-/* NO 按钮 */
-button[data-testid="baseButton-secondary"][key*="no"] {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 8px;
-    font-size: 18px;
-    height: 50px;
-}
-
-button[data-testid="baseButton-secondary"][key*="no"]:hover {
-    background-color: #c82333;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
 st.title("Troubleshooting Tool")
 
 # 初始化状态
@@ -96,10 +64,10 @@ if st.session_state.step == 1:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes1"):
+    if col1.button("Yes"):
         next_step(2)
 
-    if col2.button("No", key="no1"):
+    if col2.button("No"):
         next_step(10)
 
 
@@ -111,10 +79,10 @@ elif st.session_state.step == 2:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes2"):
+    if col1.button("Yes"):
         next_step(3)
 
-    if col2.button("No", key="no2"):
+    if col2.button("No"):
         st.session_state.code = 9100000
         st.rerun()
 
@@ -127,11 +95,11 @@ elif st.session_state.step == 3:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes3"):
+    if col1.button("Yes"):
         st.session_state.code = 9111000
         st.rerun()
 
-    if col2.button("No", key="no3"):
+    if col2.button("No"):
         next_step(4)
 
 
@@ -143,11 +111,11 @@ elif st.session_state.step == 4:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes4"):
+    if col1.button("Yes"):
         st.session_state.code = 9110100
         st.rerun()
 
-    if col2.button("No", key="no4"):
+    if col2.button("No"):
         next_step(5)
 
 
@@ -159,10 +127,10 @@ elif st.session_state.step == 5:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes5"):
+    if col1.button("Yes"):
         next_step(6)
 
-    if col2.button("No", key="no5"):
+    if col2.button("No"):
         st.session_state.code = 9110000
         st.rerun()
 
@@ -175,10 +143,10 @@ elif st.session_state.step == 6:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes6"):
+    if col1.button("Yes"):
         st.success("Done")
 
-    if col2.button("No", key="no6"):
+    if col2.button("No"):
         st.session_state.code = 9110011
         st.rerun()
 
@@ -191,11 +159,11 @@ elif st.session_state.step == 10:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes10"):
+    if col1.button("Yes"):
         st.session_state.code = 9010000
         st.rerun()
 
-    if col2.button("No", key="no10"):
+    if col2.button("No"):
         next_step(11)
 
 
@@ -207,11 +175,11 @@ elif st.session_state.step == 11:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes11"):
+    if col1.button("Yes"):
         st.session_state.code = 9001000
         st.rerun()
 
-    if col2.button("No", key="no11"):
+    if col2.button("No"):
         next_step(12)
 
 
@@ -223,14 +191,15 @@ elif st.session_state.step == 12:
 
     col1, col2 = st.columns(2)
 
-    if col1.button("Yes", key="yes12"):
+    if col1.button("Yes"):
         st.session_state.code = 9001000
         st.rerun()
 
-    if col2.button("No", key="no12"):
+    if col2.button("No"):
         st.session_state.code = 9000100
 
         st.rerun()
+
 
 
 
