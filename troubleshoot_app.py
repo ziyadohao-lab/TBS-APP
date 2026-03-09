@@ -4,38 +4,6 @@ st.set_page_config(page_title="Troubleshooting", page_icon="🔧")
 
 st.title("Troubleshooting Tool")
 
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("""
-    <style>
-    .yesbutton button {
-        background-color: #27AE60;
-        color: white;
-        height:60px;
-        width:120px;
-        font-size:18px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    yes = st.button("YES")
-
-with col2:
-    st.markdown("""
-    <style>
-    .nobutton button {
-        background-color: #E74C3C;
-        color: white;
-        height:60px;
-        width:120px;
-        font-size:18px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    no = st.button("NO")
-
 # 初始化状态
 if "step" not in st.session_state:
     st.session_state.step = 1
@@ -231,4 +199,5 @@ elif st.session_state.step == 12:
         st.session_state.code = 9000100
 
         st.rerun()
+
 
